@@ -1,6 +1,6 @@
 import React from 'react'
 import AboutHero from '../components/AboutHotsi'
-import FounderSection from '../components/aboutFounder'
+import FounderSection from '../components/AboutFounder'
 import ChefsSection from '../components/Chef'
 import ExperienceSection from '../components/OurExperience'
 
