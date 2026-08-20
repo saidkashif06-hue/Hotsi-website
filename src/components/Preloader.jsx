@@ -28,9 +28,9 @@ export default function Preloader({ onComplete, duration = 3000 }) {
       onComplete && onComplete();
     };
 
-    // Safety net: no matter what GSAP does (StrictMode double-invoke,
-    // a killed tween, a thrown error mid-timeline), the site becomes
-    // interactive again no later than duration + ~1s.
+    // Hard safety net: no matter what GSAP does (StrictMode double-invoke,
+    // a killed tween, a thrown error mid-timeline, a slow/broken image),
+    // the site becomes interactive again no later than duration + ~1s.
     const fallback = setTimeout(finish, duration + 1000);
 
     const ctx = gsap.context(() => {
@@ -141,6 +141,16 @@ export default function Preloader({ onComplete, duration = 3000 }) {
             src="/logo.png"
             alt="Hotsi Sushi"
             className="relative z-10 h-24 w-auto sm:h-32"
+            // Decode/priority hints so this specific image never becomes
+            // a bottleneck for the rest of the page's asset queue.
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            onError={(e) => {
+              // If the logo 404s (wrong base path after deploy), don't let
+              // a broken image icon sit in the layout — just hide it.
+              e.currentTarget.style.visibility = "hidden";
+            }}
           />
         </div>
 

@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import Navbar from "./components/Navbar";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import Home from "./pages/Home";
 import Preloader from "./components/Preloader";
 import Footer from "./components/Footer";
-import About from "./pages/About";
-
-
-
 import ScrollToTop from "./components/ScrollToTop";
-import LocationPage from "./pages/Location";
-import MenuPage from "./pages/Menu";
-import ContactPage from "./pages/Contact";
-import OrderPage from "./pages/OrderNow";
+
+// Route-level code splitting: each page now ships as its own JS chunk
+// instead of all six pages (and their images/animations) being bundled
+// into one giant file that has to be downloaded + parsed before anything
+// can render. This is the most common cause of a page "hanging" for
+// 60-120s on a slow connection right after deploy.
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const MenuPage = lazy(() => import("./pages/Menu"));
+const LocationPage = lazy(() => import("./pages/Location"));
+const ContactPage = lazy(() => import("./pages/Contact"));
+const OrderPage = lazy(() => import("./pages/OrderNow"));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,8 +77,14 @@ const App = () => {
       window.lenis.start();
       document.body.style.overflow = "";
 
+      // Give the just-revealed page a moment to actually paint/layout
+      // before ScrollTrigger measures it. A single rAF right after
+      // unmount can fire before images/lazy chunks have affected layout,
+      // producing wrong trigger positions and extra reflow work.
       requestAnimationFrame(() => {
-        ScrollTrigger.refresh();
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+        });
       });
     }
 
@@ -95,7 +104,9 @@ const App = () => {
     }
 
     requestAnimationFrame(() => {
-      ScrollTrigger.refresh();
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
     });
   }, [location.pathname]);
 
@@ -114,14 +125,19 @@ const App = () => {
       <Navbar />
 
       {/* ROUTES */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/menu" element={<MenuPage />} />
-        <Route path="/location" element={<LocationPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/order-now" element={<OrderPage />} />
-      </Routes>
+      {/* Suspense fallback is intentionally empty/null: the Preloader
+          already owns the loading UI for first paint. On subsequent
+          route changes, chunks are tiny and load near-instantly. */}
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/location" element={<LocationPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/order-now" element={<OrderPage />} />
+        </Routes>
+      </Suspense>
 
       <Footer />
     </div>
