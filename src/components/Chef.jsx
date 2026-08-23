@@ -42,19 +42,19 @@ export default function ChefsSection() {
       name: "Chef Hiroshi",
       role: "Master Sushi Chef",
       note: "20 years perfecting nigiri technique",
-      img: "/chef/chef1.png",
+      img: "/chef/chef1.webp",
     },
     {
       name: "Chef Aiko",
       role: "Fusion Specialist",
       note: "Where tradition meets bold flavor",
-      img: "/chef/chef2.png",
+      img: "/chef/chef2.webp",
     },
     {
       name: "Chef Kenji",
       role: "Executive Chef",
       note: "Leads every plate that leaves the kitchen",
-      img: "/chef/chef3.png",
+      img: "/chef/chef3.webp",
     },
   ];
 

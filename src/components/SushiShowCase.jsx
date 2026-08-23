@@ -112,7 +112,7 @@ export default function SushiShowcase() {
           <div className="flex flex-col gap-6">
             <div data-reveal className="overflow-hidden rounded-[2rem]">
               <img
-                src="/sushi1.jpg"
+                src="/sushi1.webp"
                 alt="Ember Blossom Roll"
                 className="h-[420px] w-full object-cover shadow-[0_30px_60px_rgba(92,58,40,0.18)] md:h-[480px]"
               />
@@ -188,7 +188,7 @@ export default function SushiShowcase() {
             {/* IMAGE BELOW */}
             <div data-reveal className="overflow-hidden rounded-[2rem]">
               <img
-                src="/sushi2.jpg"
+                src="/sushi2.webp"
                 alt="Sunrise Umi Roll"
                 className="h-[420px] w-full object-cover shadow-[0_30px_60px_rgba(92,58,40,0.18)] md:h-[480px]"
               />

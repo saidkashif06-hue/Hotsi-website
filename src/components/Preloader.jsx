@@ -138,7 +138,7 @@ export default function Preloader({ onComplete, duration = 3000 }) {
 
           <img
             ref={logoRef}
-            src="/logo.png"
+            src="/logo.webp"
             alt="Hotsi Sushi"
             className="relative z-10 h-24 w-auto sm:h-32"
             // Decode/priority hints so this specific image never becomes

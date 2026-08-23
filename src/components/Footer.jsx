@@ -38,7 +38,7 @@ export default function Footer() {
                         >
                             <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-[0_12px_35px_rgba(92,58,40,0.15)]">
                                 <img
-                                    src="/logo.png"
+                                    src="/logo.webp"
                                     alt="Hotsi Sushi"
                                     className="h-24 w-auto"
                                 />

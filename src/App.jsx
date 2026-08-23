@@ -35,7 +35,7 @@ const App = () => {
       duration: 1,
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      touchMultiplier: 1,
       infinite: false,
     });
 
@@ -112,13 +112,13 @@ const App = () => {
 
   return (
     <div className="min-h-screen">
-      {/* PRELOADER */}
-      {loading && (
-        <Preloader
-          duration={3000}
-          onComplete={() => setLoading(false)}
-        />
-      )}
+      {/* PRELOADER
+          - onComplete is now wired up, so `loading` actually flips to false.
+          - Conditionally rendered so the component UNMOUNTS when done,
+            which runs its internal gsap.context().revert() and kills all
+            the infinite orbit/icon/logo tweens instead of leaving them
+            running forever behind an invisible opacity:0 div. */}
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
 
       {/* GLOBAL */}
       <ScrollToTop />

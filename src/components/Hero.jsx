@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const dishes = [
-  { image: "/1.jpg", name: "Signature Sushi Platter" },
-  { image: "/2.jpg", name: "Premium Salmon Roll" },
-  { image: "/3.jpg", name: "Hotsi Special Maki" },
+  { image: "/1.webp", name: "Signature Sushi Platter" },
+  { image: "/2.webp", name: "Premium Salmon Roll" },
+  { image: "/3.webp", name: "Hotsi Special Maki" },
 ];
 
 /**
@@ -254,7 +254,7 @@ const navigate = useNavigate()
         <div className="relative h-screen w-screen flex-shrink-0">
           <video
             className="h-full w-full object-cover"
-            src="/1f.mp4"
+            src="/1f_low.mp4"
             autoPlay
             muted
             loop

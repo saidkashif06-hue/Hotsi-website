@@ -188,7 +188,7 @@ export default function Navbar() {
 
             {/* Mobile: logo sits left */}
             <Link to="/" className="md:hidden flex items-center" aria-label="Hotsi Sushi — home">
-              <img src="/logo.png" alt="Hotsi Sushi" className="h-12 w-auto" />
+              <img src="/logo.webp" alt="Hotsi Sushi" className="h-12 w-auto" />
             </Link>
           </div>
 
@@ -203,7 +203,7 @@ export default function Navbar() {
             </ul>
 
             <Link to="/" ref={logoRef} className="flex items-center" aria-label="Hotsi Sushi — home">
-              <img src="/logo.png" alt="Hotsi Sushi" className="h-20 w-auto" />
+              <img src="/logo.webp" alt="Hotsi Sushi" className="h-20 w-auto" />
             </Link>
 
             <ul className="flex items-center gap-8">

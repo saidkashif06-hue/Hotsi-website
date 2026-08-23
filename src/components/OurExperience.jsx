@@ -98,7 +98,7 @@ export default function ExperienceSection() {
           <article className="exp-reveal exp-card-1 group relative flex min-h-[380px] flex-col overflow-hidden rounded-2xl border border-[#EFDDC9] bg-white p-7 shadow-[0_20px_60px_rgba(92,58,40,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(92,58,40,0.12)] md:col-span-2 lg:col-span-1">
             {/* background image, low opacity */}
             <img
-              src="/growthimg.png"
+              src="/growthimg.webp"
               alt=""
               aria-hidden="true"
               className="exp-card-1-img pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.14]"
@@ -154,7 +154,7 @@ export default function ExperienceSection() {
           <article className="exp-reveal group relative flex min-h-[380px] flex-col justify-between overflow-hidden rounded-2xl border border-[#EFDDC9] bg-[#F8EEE5] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(92,58,40,0.10)]">
             {/* background image, low opacity */}
             <img
-              src="/card2img.jpg"
+              src="/card2img.webp"
               alt=""
               aria-hidden="true"
               className="exp-card-bg-img pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.14]"
@@ -183,7 +183,7 @@ export default function ExperienceSection() {
           <article className="exp-reveal group relative flex min-h-[380px] flex-col justify-between overflow-hidden rounded-2xl border border-[#EFDDC9] bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(92,58,40,0.10)]">
             {/* background image, low opacity */}
             <img
-              src="/card3.jpg"
+              src="/card3.webp"
               alt=""
               aria-hidden="true"
               className="exp-card-bg-img pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.14]"

@@ -210,7 +210,7 @@ export default function FounderSection() {
             {/* FOUNDER IMAGE */}
             <div className="relative h-[280px] overflow-hidden rounded-xl bg-[#F8EEE5]">
               <img
-                src="/aboutmainimg.png"
+                src="/aboutmainimg.webp"
                 alt="Founder of Hotsi Sushi"
                 // object-[center_12%] keeps the crop focused just above
                 // eye-level so the top of the head is never clipped,
@@ -277,7 +277,7 @@ export default function FounderSection() {
             {/* ILLUSTRATION — girl eating sushi */}
             <div className="-mx-6 -mb-6 mt-6">
               <img
-                src="/illus.png"
+                src="/illus.webp"
                 alt="Illustration of a girl enjoying sushi"
                 className="h-80 w-full object-contain object-bottom transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
