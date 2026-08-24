@@ -10,10 +10,19 @@ export default function FollowInstagram() {
   const sectionRef = useRef(null);
 
   const posts = [
-    { key: "insta1", image: "/instagram/insta1.webp" },
-    { key: "insta2", image: "/instagram/insta2.webp" },
-    { key: "insta3", image: "/instagram/insta3.webp" },
-  ];
+  {
+    key: "insta1",
+    image: "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg",
+  },
+  {
+    key: "insta2",
+    image: "https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg",
+  },
+  {
+    key: "insta3",
+    image: "https://images.pexels.com/photos/8951199/pexels-photo-8951199.jpeg",
+  },
+];
 
   useEffect(() => {
     const section = sectionRef.current;
